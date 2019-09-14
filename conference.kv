@@ -1,0 +1,1072 @@
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+
+<StrokebTextInput@TextInput>:
+    background_color:  [1,1,1,0]
+    border_radius: 20
+    back_color: [.0, .4, .4,1]
+    background_normal: ''
+    canvas.before:
+        Color: 
+            rgba: self.back_color
+        Line:
+            rounded_rectangle: (self.pos[0], self.pos[1], self.size[0], self.size[1], self.border_radius)
+            width: 1.2
+<SmoothButton@Button>:
+    background_color:  [.7, .4, .6,1]
+    background_color: (0,0,0,0)
+    border_radius: [18]
+    back_color: [.3, .7, .1,1]
+    background_normal: ''
+    canvas.before:
+        Color: 
+            rgba: self.back_color
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: self.border_radius
+<Stroke@Spinner>:
+    background_color:  [1,1,1,0]
+    border_radius: 20
+    back_color: [.0, .4, .4,1]
+    background_normal: ''
+    canvas.before:
+        Color: 
+            rgba: self.back_color
+        Line:
+            rounded_rectangle: (self.pos[0], self.pos[1], self.size[0], self.size[1], self.border_radius)
+            width: 1.2
+
+
+<Toolbar@GridLayout>:
+    cols: 4
+    orientation: 'horizontal'
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'icons/second.png'
+
+    size_hint: (1, .1)
+    pos_hint: {'top': 1, 'y': 0}
+    padding: 1
+    spacing: 3
+<Logo@GridLayout>:
+    cols: 1
+    size_hint: (.3, 1)
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'icons/first.png'
+<Space@GridLayout>:
+    cols: 1
+    size_hint: (.4, 1)
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'icons/second.png'
+
+
+<ToolButton@Button>:
+    align: 'center'
+    size_hint: (.1, .1)
+    background_color: [1,1,1,0]
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'icons/menu.jpg'
+<register@Button>:
+    align: 'center'
+    size_hint: (.8, 1)
+    background_color: [1,1,1,0]
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'icons/ticket.jpg'
+
+
+
+#--------------------------------------------------------------------------------------------------------------------------
+
+
+<Home>:
+    RecycleView:
+        effect_cls: "ScrollEffect"
+        bar_color: [0.2, 0.7, 0.9, 1]
+        bar_width: 4
+        bar_inactive_color: [0,1,0,1]
+        bar_active_color: [.0,.4,.4,1]
+        viewclass: 'Homescroll'
+        Homescroll:
+            rows: 8
+            padding: 2
+            orientation: 'vertical'
+            canvas.before:
+                Rectangle:
+                    source: 'icons/second.png'
+            Countdown:
+                cols: 1
+                orientation: 'vertical'
+                size_hint: (1, 1)
+                canvas.before:
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'icons/back.png'
+                Label:
+                    text: 'MASENO UNIVERSITY 3RD INTERNATIONAL CONFERENCE '
+                    font_size: 20
+                    color: [1,1,1,1]
+                Label:
+                    text: '17TH - 19TH JUNE 2020'
+                    font_size: 20
+                    color: [1,1,1,1]
+                Label:
+                    text: 'THEME: Enhancing Human Development and Partnerships '
+                    font_size: 14
+                    color: [1,1,1,1]
+                Label:
+                    text: 'Through Training, Research and Innovation'
+                    font_size: 14
+                    color: [1,1,1,1]
+
+                        
+
+            Secondpart:
+                cols: 2
+                orientation: 'horizontal'
+                size_hint: (1, 1)
+                canvas.before:
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                StackLayout:
+                    size_hint: (.6, 1)
+                    cols: 2
+                    rows: 1
+                    size_hint: (1, 1)
+                    orientation: 'tb-lr'
+                    canvas.before:
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'icons/second.png'
+                    Button:
+                        size_hint: (1, .2)
+                        text: ' Maseno University @ a Glance'
+                        color: [0,0,0,1]
+                        background_color: [0,1,1,1]
+                    GridLayout:
+                        size_hint: (1, .8)
+                        rows: 1
+                        orientation: 'vertical'
+                        canvas.before:
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'icons/mrs.png'
+
+
+
+                GridLayout:
+                    cols: 1
+                    spacing: 2
+                    size_hint: (1,1)
+                    orientation: 'vertical'
+                    canvas.before:
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'icons/second.png'
+                    Label:
+                        text: 'Conference 2020'
+                        bold: True
+                        font_size: 20
+                        color: [1,0,0,1]
+                    Label:
+                        text: 'Where Knowledge and Innovation is shared'
+                        font_size: 20
+                        bold: True
+                        underline: True
+                        color: [.4,.4, .4, 1]
+                    Label:
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, '
+                        font_size: 14
+                        color: [0,0,0,1]
+                    Label:
+                        text: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+                        font_size:14
+                        color: [0,0,0,1]
+                    Label:
+                        text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco '
+                        font_size: 14
+                        color: [0,0,0,1]
+                    Label:
+                        text: 'aboris nisi ut aliquip ex ea commodo consequat'
+                        font_size: 14
+                        color: [0,0,0,1]
+                    Label:
+                        text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum'
+                        font_size: 14
+                        color: [0,0,0,1]
+            Registerpart:
+                size_hint: (1, .3)
+                cols: 2
+                orientation: 'horizontal'
+                padding: 1
+                spacing: 5
+                canvas.before: 
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'icons/second.png'
+                Button:
+                    text: 'Submit Abstract'
+                    font_size: 18
+                    color: [255,255,.4,1]
+                    background_color: [1,1,1,0]
+                    underline: True
+                    bold: True
+                    on_press: 
+                        root.manager.current='submitabstract'
+
+                Button:
+                    text: 'Register for the conference'
+                    font_size:18
+                    bold: True
+                    underline: True
+                    color:[255,255,.4,1]
+                    background_color: [1,1,1,0]
+                    on_press:
+                        root.manager.current='registercon'
+
+
+
+
+
+#================================================================================================== ===============
+
+#=================================================================================================================
+            GridLayout:
+                size_hint: (1, .2)
+                cols: 1
+                canvas.before:
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'icons/second.png'
+                Label:
+                    text: 'opportunities'
+                    bold: True
+                    font_size: 20
+                    color: [.4,.4, .6, 1]
+
+#==================================================================================================================
+            StackLayout:
+                cols: 5
+                size_hint: (1, .5)
+                orientation: 'lr-tb'
+                canvas.before:
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                spacing: 4
+                padding: 2
+                GridLayout:
+                    rows: 2
+                    size_hint: (.2, 1)
+                    padding: 3
+                    Image:
+                        source: 'opportunities/icon1.png'
+                        allow_stretch: True
+                    Label:
+                        text: 'Get your Tshirt'
+                        font_size: 16
+                        color: [.7,.4,.6, 1]
+                        bold: True
+
+                GridLayout:
+                    rows: 2
+                    padding:3
+                    size_hint: (.3, 1)
+                    Image:
+                        source: 'icons/explore.png'
+                        allow_stretch: True
+                    Label:
+                        text: 'Explore Event'
+                        font_size: 16
+                        color: [.7,.4,.6, 1]
+                        bold: True
+
+                GridLayout:
+                    rows: 2
+                    padding:3
+                    size_hint: (.3, 1)
+                    Image:
+                        source: 'icons/learn.png'
+                        allow_stretch: True
+                    Label:
+                        text: 'Learn and Learn'
+                        font_size: 16
+                        color: [.7,.4,.6, 1]
+                        bold: True
+                GridLayout:
+                    rows: 2
+                    padding:3
+                    size_hint: (.2, 1)
+                    Image:
+                        source: 'icons/expert.png'
+                        allow_stretch: True
+                    Label:
+                        text: 'Ask The Experts'
+                        font_size: 16
+                        color: [.7,.4,.6, 1]
+                        bold: True
+
+                
+
+
+
+
+#=================================================================================================================
+            GridLayout:
+                rows: 3
+                orientation: 'vertical'
+                size_hint:(1, .5)
+                padding: 4
+                Label:
+                    text: 'Who makes this possible'
+                    font_size: 14
+                    color: [0,0,0,1]
+                Label:
+                    text:'interested in becoming a sponsor?'
+                    font_size: 12
+                    color: [0,0,0,1]
+                Button:
+                    text: 'Get in touch'
+                    size_hint: (.2,.2)
+                    font_size: 16
+                    color: [.4, .4, .6,1]
+                    bold: True
+                    background_color: [1,1,1,0]
+
+#=================================================================================================================
+            Thirdpart:
+                orientation: 'vertical'
+                cols: 1
+                canvas.before:
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'icons/second.png'
+                size_hint: (1, .5)
+                GridLayout:
+                    cols: 4
+                    orientation: 'horizontal'
+                    Image:
+                        source: 'sponsors/brand1.png'
+                        allow_stretch: True
+                    Image:
+                        source: 'sponsors/brand2.png'
+                        allow_stretch: True
+                    Image:
+                        source: 'sponsors/brand3.png'
+                        allow_stretch: True
+                    Image:
+                        source: 'sponsors/brand4.png'
+                        allow_stretch: True
+
+
+
+#==========================================================================================================
+            GridLayout:
+                rows: 2
+                size_hint: (1, .3)
+                orientation: 'horizontal'
+                canvas.before:
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'icons/second.png'
+                Label:
+                    text: 'conference 2020 @ 2019 Maseno University .All rights Reserved '
+                    color: [.4,.4, .6,1]
+
+                Label:
+                    text: 'elvisianomondi@gmail.com'
+                    color: [.4, .4, .6, 1]
+
+#======================================================================================================================
+#======================================================================================================================
+#======================================================================================================================
+#======================================================================================================================
+#======================================================================================================================
+
+<Conference>:
+    ScrollView:
+        size_hint: (1, 1)
+        bar_width: 2
+        effect_rows: 'ScrollEffect'
+        sroll_type: ['bars', 'content']
+        do_scroll: True
+        GridLayout:
+            rows: 2
+            orientation: 'vertical'
+            spacing: 4
+            padding: 2
+            canvas.before:
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    source: 'background/bac.png'
+
+
+            Menubuttons:
+                cols: 5
+                size_hint: (1, .1)
+                spacing: 3
+                orientation: 'horizontal'
+                canvas.before:
+                    Color:
+                        rgba: [1,1,1,0]
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                Button:
+                    text: 'Home'
+                    color: [255,200,100,1]
+                    size_hint: (.2 ,.1)
+                    background_color: [1,1,1,0]
+                    bold: True
+                    font_size: 14
+                    on_press:
+                        root.manager.current='homescreen'
+                Button:
+                    text: 'The conference overview'
+                    background_color: [1,1,1,0]
+                    size_hint: (.2, .1)
+                    color: [255,200,100,1]
+                    bold: True
+                    font_size: 16
+                    on_release: root.confer()
+
+                Button:
+                    text: 'Sub Themes'
+                    color: [255,200,100,1]
+                    background_color: [1,1,1,0]
+                    size_hint: (.2, .1)
+                    bold:True
+                    font_size: 16
+                    on_press: root.themes()
+
+                Button:
+                    text: 'Travel Kisumu'
+                    color: [255,200,100,1]
+                    size_hint: (.2, .1)
+                    background_color: [1,1,1,0]
+                    bold: True
+                    on_press: root.travel()
+                    font_size: 16
+                Button:
+                    text: 'contact us'
+                    color: [255, 255,100,1]
+                    size_hint: (.2, .1)
+                    background_color: [1,1,1,0]
+                    bold: True
+                    on_press: root.contact()
+            Displaypart:
+                id: display
+                cols: 1
+                size_hint: (1, .8)
+                canvas.before:
+                    Rectangle:
+                        size:self.size
+                        pos: self.pos
+                        source: 'background/bacc.png'
+
+
+#===================================Abstract submission===================================================
+<Abstract>:
+    GridLayout:
+        size_hint: (1, 1)
+        cols: 2
+        StackLayout:
+            cols: 1
+            orientation: 'tb-lr'
+            size_hint: (.5, 1)
+            spacing: 2
+            padding: 2
+            canvas.before:
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    source: 'icons/second.png'
+            Label:
+                text: 'Abstract Submission Form'
+                size_hint: (1, .1)
+                text_align: 'center'
+                color: [.3, .6, .5, 1]
+                bold: True
+                font_size: 18
+            StrokebTextInput:
+                id: full_names
+                multline: False
+                height: '20dp'
+                size_hint:(1, .1)
+                hint_text: 'Full names'
+                use_bubble: True
+            StrokebTextInput:
+                id: phone_number
+                multline: False
+                height: '20dp'
+                size_hint:(1, .1)
+                hint_text: 'Phone number'
+                use_bubble: True
+            StrokebTextInput:
+                id: country
+                multline: False
+                height: '20dp'
+                size_hint:(1, .1)
+                hint_text: 'Country'
+                use_bubble: True
+            StrokebTextInput:
+                id: email_address
+                multline: False
+                height: '20dp'
+                size_hint:(1, .1)
+                hint_text: 'email_address'
+                use_bubble: True
+            StrokebTextInput:
+                id: institution
+                multline: False
+                height: '20dp'
+                size_hint:(1, .1)
+                hint_text: 'Institution'
+                use_bubble: True
+            Stroke:
+                id: speciality
+                size_hint:(1, .07)
+                text: 'Click to chose your speciality'
+                text_color: [0,1,1,0]
+                values: ['Food and Nutrition Security', 'Maternal, Child Health and Nutrition', 'Societal Dynamics: Technology, Culture, Language and Crime']
+
+            Stroke:
+                id: company size
+                size_hint:(1, .07)
+                text: 'Company size '
+                text_color: [0,1,1,0]
+                values: ['0-10', '10-500', '500-10000', '10000-100000']
+            StrokebTextInput:
+                id: institution
+                multline: False
+                height: '20dp'
+                size_hint:(1, .1)
+                hint_text: 'Page Title'
+                use_bubble: True
+
+        GridLayout:
+            rows: 2
+            size_hint: (.5, 1)
+            spacing: 3
+            padding: 3
+            orientation: 'horizontal'
+            canvas.before:
+                Rectangle:
+                    size: self.pos
+                    pos: self.pos
+                    source: 'icons/second.png'
+            StrokebTextInput:
+                id: institution
+                multline: False
+                height: '20dp'
+                size_hint:(.4, .4)
+                hint_text: 'Abstract'
+                use_bubble: True
+            StackLayout:
+                size_hint: (1, .1)
+                spacing: 3
+                padding: 3
+                cols: 2
+                orientation: 'rl-tb'
+                canvas.before:
+                    Rectangle:
+                        size: self.pos
+                        pos: self.pos
+                        source: 'icons/second.png'
+                SmoothButton:
+                    id: submit
+                    text: 'Submit'
+                    size_hint: (.5, .5)
+                    font_size: 20
+                    bold: True
+                SmoothButton:
+                    id: reset
+                    text: 'Reset'
+                    size_hint: (.5, .5)
+                    bold: True
+                    font_size: 20
+
+
+
+
+
+#================================conferenceregister=======================================================
+<Conferenceregister>:
+    ScrollView:
+        size_hint: (1, 1)
+        bar_width: 2
+        effect_rows: 'ScrollEffect'
+        sroll_type: ['bars', 'content']
+        do_scroll: True
+        GridLayout:
+            cols: 3
+            orientation: 'vertical'
+            canvas.before:
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    source: 'icons/second.png'
+            GridLayout:
+                cols: 1
+                size_hint: (.3, 1)
+                canvas.before:
+                    Color:
+                        rgba: [1,1,1,0]
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        
+            GridLayout:
+                cols: 1
+                size_hint: (.4, 1)
+                canvas.before:
+                    Color:
+                        rgba: [1,1,1,0]
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                BoxLayout:
+                    rows: 3
+                    orientation: 'vertical'
+                    size_hint: (.5,.5)
+                    canvas.before:
+                        Color:
+                            rgba: [1,1,1,0]
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'icons/second.png'
+                    Label:
+                        text: 'Register Now!'
+                        color: [0,0,0,1]
+                        font_size: 20
+                        bold: True
+                        size_hint: (1, .2)
+                    register:
+                        size_hint: (1, .7)
+                    Button:
+                        size_hint: (1, .1)
+                        background_color: [1,1,1,0]
+                    
+
+
+            GridLayout:
+                cols: 1
+                size_hint: (.3, 1)
+                canvas.before:
+                    Color:
+                        rgba: [1,1,1,0]
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+#=============================end====================================================================================
+#---------------------------------------------------------------------------------------------------------------------
+#============================================contact us===================================================================
+<Strokestyle@TextInput>:
+    background_color:  [1,1,1,0]
+    border_radius: 20
+    back_color: [.0,.4,.4,1]
+    background_normal: ''
+    canvas.before:
+        Color: 
+            rgba: self.back_color
+        Line:
+            rounded_rectangle: (self.pos[0], self.pos[1], self.size[0], self.size[1], self.border_radius)
+            width: 1.2
+<Contacus>:
+    cols: 2
+    spacing: 3
+    padding: 2
+    orientation: 'tb-lr'
+    size_hint: (1, 1)
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'background/bacc.png'
+    GridLayout:
+        cols: 1
+        size_hint: (.3, 1)
+        canvas.before:
+            Color:
+                rgba: [1,1,1,0]
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        
+                
+    StackLayout:
+        cols: 1
+        spacing: 3
+        padding: 2
+        orientation: 'tb-lr'
+        size_hint: (.7, 1)
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'background/bacc.png'
+        Strokestyle:
+            id: name
+            hint_text: 'Name'
+            size_hint: (.5, .1)
+        Strokestyle:
+            id: email
+            hint_text: 'email'
+            size_hint: (.5, .1)
+        Strokestyle:
+            id: subject
+            hint_text: 'Subject'
+            size_hint:(.5, .1)
+        Strokestyle:
+            id: message
+            hint_text: 'Message'
+            size_hint: (.5, .3)
+        SmoothButton:
+            text: 'Send'
+            color: [255,200,255,1]
+            size_hint: (.5, .1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#==========================================vice chancellor==================================================
+<Vicechancellor>:
+    ScrollView:
+        size_hint: (1, 1)
+        bar_width: 2
+        effect_rows: 'ScrollEffect'
+        sroll_type: ['bars', 'content']
+        do_scroll: True
+        StackLayout:
+            cols: 2
+            size_hint: (1, 1)
+            orientation: 'tb-lr'
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    source: 'background/bacc.png'
+            GridLayout:
+                size_hint: (.3,1)
+                padding:4
+                cols: 1
+                canvas.before:
+                    Color:
+                        rgba: [1,1,1,1]
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'icons/cat2.png'
+                GridLayout:
+                    cols: 1
+                    canvas.before:
+                        Color:
+                            rgba: [1,1,1,1]
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'icons/cat2.png'
+                    Label:
+                        text: 'The Vice Chancellor'
+                        bold: True
+                        font_size:20
+                        color: [0,0,0,1]
+                        underline: True
+                    Label:
+                        text: '       Prof. Julius O. Nyabundi PhD, OGW'
+                        font_size: 16
+                        bold: True
+                        size_hint: (1,1)
+                        color: [0,0,0,1]
+                Image:
+                    source: 'icons/vice.png'
+                    size_hint:(10, 5)
+
+            GridLayout:
+                size_hint: (.7, 1)
+                cols: 1
+                canvas.before:
+                    Color:
+                        rgba: [1,1,1,1]
+                    Rectangle:
+                        size:self.size
+                        pos: self.pos
+                        source: 'icons/cat2.png'
+                Label:
+                    text: 'It is my great pleasure to welcome all to Maseno University'
+                    font_size: 16
+                    underline: True
+                    color: [0,0,0,1]
+                Label:
+                    text: 'for the 3rd International Scientic Conference themed'
+                    font_size: 16
+                    underline: True
+                    color: [0,0,0,1]
+
+
+#===============================================end=============================================================
+<Dvc>:
+    ScrollView:
+        size_hint: (1, 1)
+        bar_width: 2
+        effect_rows: 'ScrollEffect'
+        sroll_type: ['bars', 'content']
+        do_scroll: True
+        StackLayout:
+            cols: 2
+            size_hint: (1, 1)
+            orientation: 'tb-lr'
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    source: 'background/bacc.png'
+            GridLayout:
+                size_hint: (.3,1)
+                padding:4
+                cols: 1
+                canvas.before:
+                    Color:
+                        rgba: [1,1,1,1]
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'icons/cat2.png'
+                Label:
+                    text: 'CONFERENCE MESSAGE FROM THE DEPUTY'
+                    font_size: 20
+                    bold: True
+                    underline: True
+                Label:
+                    text: 'VICE CHANCELLOR, PARTNERSHIPS'
+                    font_size: 20
+                    bold: True
+                    underline: True
+                Label:
+                    text: 'RESEARCH AND INNOVATIONS'
+                    font_size: 20
+                    bold: True
+                    underline: True
+
+
+            GridLayout:
+                size_hint: (.7, 1)
+                cols: 1
+                canvas.before:
+                    Color:
+                        rgba: [1,1,1,1]
+                    Rectangle:
+                        size:self.size
+                        pos: self.pos
+                        source: 'icons/cat2.png'
+                Label:
+                    text: 'It is my great pleasure to welcome all to Maseno University'
+                    font_size: 16
+                    underline: True
+                    color: [0,0,0,1]
+                Label:
+                    text: 'for the 3rd International Scientic Conference themed'
+                    font_size: 16
+                    underline: True
+                    color: [0,0,0,1]
+
+#========================================DVC-PRI end=================================================================
+#===================================Director==========================================================================
+<Director_research>:
+    ScrollView:
+        size_hint: (1, 1)
+        bar_width: 2
+        effect_rows: 'ScrollEffect'
+        sroll_type: ['bars', 'content']
+        do_scroll: True
+        StackLayout:
+            cols: 2
+            size_hint: (1, 1)
+            orientation: 'tb-lr'
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    source: 'background/bacc.png'
+            GridLayout:
+                size_hint: (.3,1)
+                padding:4
+                cols: 1
+                canvas.before:
+                    Color:
+                        rgba: [1,1,1,1]
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'icons/cat2.png'
+                Label:
+                    text: 'CONFERENCE MESSAGE FROM'
+                    font_size: 20
+                    bold: True
+                    underline: True
+                Label:
+                    text: 'THE DIRECTOR RESEARCH '
+                    font_size: 20
+                    bold: True
+                    underline: True
+                Label:
+                    text: 'AND INNOVATIONS'
+                    font_size: 20
+                    bold: True
+                    underline: True
+
+
+            GridLayout:
+                size_hint: (.7, 1)
+                cols: 1
+                canvas.before:
+                    Color:
+                        rgba: [1,1,1,1]
+                    Rectangle:
+                        size:self.size
+                        pos: self.pos
+                        source: 'icons/cat2.png'
+                Label:
+                    text: 'It is my great pleasure to welcome all to Maseno University'
+                    font_size: 16
+                    underline: True
+                    color: [0,0,0,1]
+                Label:
+                    text: 'for the 3rd International Scientic Conference themed'
+                    font_size: 16
+                    underline: True
+                    color: [0,0,0,1]
+#================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#===================================end====================================================================
+
+<Mainscreen>:
+    manager: manager
+    rows: 2
+    size_hint: (1, 1)
+    canvas.before:
+        Color:
+            rgba: [.9,.9,.9,1]
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    Toolbar:
+        Logo:
+        Space:  
+            Button:
+                text: 'Register now!'
+                color: [0,0,1,1]
+                bold: True
+                font_size: 20
+                background_color: [1,1,1,0]
+                size_hint: (.5,.5)
+                on_press:
+                    root.manager.current='registercon'
+        ToolButton:
+            on_press:
+                root.manager.current='menuscreen'
+        GridLayout:
+            cols: 1
+            size_hint: (.03, .1)
+    ScreenSwitcher:
+        size_hint: (1, .9)
+        id: manager
+        transition: NoTransition()
+        Home:
+            name: 'homescreen'
+        Conference:
+            name: 'menuscreen'
+        Abstract:
+            name: 'submitabstract'
+        Conferenceregister:
+            name: 'registercon'
+
+
